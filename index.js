@@ -6,6 +6,8 @@ const args = process.argv.slice(2)
 const tmp_input_path = args[0]
 const file_basename = args[1]
 
+console.log(tmp_input_path, file_basename)
+
 const sharpTile = async () => {
   await sharp(path.join(tmp_input_path))
     .png({
