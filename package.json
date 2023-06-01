@@ -1,19 +1,14 @@
 {
-  "name": "jenkins-job-nodejs-test",
+  "name": "deep-zoom-image-sharp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MarshallChang/jenkins-job-nodejs-test.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MarshallChang/jenkins-job-nodejs-test/issues"
-  },
-  "homepage": "https://github.com/MarshallChang/jenkins-job-nodejs-test#readme"
+  "author": "MarshallChang",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "0.31.3"
+  }
 }
