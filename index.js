@@ -1,14 +1,13 @@
-const path = require('path')
-const sharp = require('sharp')
-const fs = require('fs')
+import path from 'path'
+import sharp from 'sharp'
 
 const args = process.argv.slice(2)
 const tmp_input_path = args[0]
-const file_basename = args[1]
+const tmp_output_path = args[1]
 
-console.log(tmp_input_path, file_basename)
+console.log(`file to tile: ${tmp_input_path}, output path: ${tmp_output_path}`)
 
-const sharpTile = async () => {
+try {
   await sharp(path.join(tmp_input_path))
     .png({
       quality: 100,
@@ -16,11 +15,9 @@ const sharpTile = async () => {
     .tile({
       size: 256,
     })
-    .toFile(`/tmp/${file_basename}/output.dz`, function (err, info) {
-      console.log('err:', err)
-      console.log('info:', info)
-    })
+    .toFile(tmp_output_path)
+} catch (error) {
+  console.log(`error: ${error}`)
 }
 
-sharpTile()
 console.log('tile success')
