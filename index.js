@@ -11,7 +11,7 @@ console.log(
 
 try {
   await sharp(path.join(tmp_input_path))
-    .webp({
+    .jpeg({
       quality: 100,
     })
     .tile({
