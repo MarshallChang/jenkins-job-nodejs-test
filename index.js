@@ -5,11 +5,13 @@ const args = process.argv.slice(2)
 const tmp_input_path = args[0]
 const tmp_output_path = args[1]
 
-console.log(`file to tile: ${tmp_input_path}, output path: ${tmp_output_path}`)
+console.log(
+  `console from sharp program:\n \t\tfile to tile: ${tmp_input_path}\t\toutput path: ${tmp_output_path}`
+)
 
 try {
   await sharp(path.join(tmp_input_path))
-    .png({
+    .webp({
       quality: 100,
     })
     .tile({
@@ -19,5 +21,3 @@ try {
 } catch (error) {
   console.log(`error: ${error}`)
 }
-
-console.log('tile success')
