@@ -6,11 +6,11 @@ const tmp_input_path = args[0]
 const tmp_output_path = args[1]
 
 console.log(
-  `console from sharp program:\n \t\tfile to tile: ${tmp_input_path}\t\toutput path: ${tmp_output_path}`
+  `log from sharp program:\n \t\tfile to tile: ${tmp_input_path}\t\toutput path: ${tmp_output_path}`
 )
 
 try {
-  await sharp(path.join(tmp_input_path))
+  await sharp(path.join(tmp_input_path), { limitInputPixels: false })
     .jpeg({
       quality: 100,
     })
